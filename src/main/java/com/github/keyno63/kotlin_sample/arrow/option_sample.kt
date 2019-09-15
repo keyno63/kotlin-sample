@@ -3,6 +3,7 @@ package com.github.keyno63.kotlin_sample.arrow
 import arrow.core.None
 import arrow.core.Option
 import arrow.core.Some
+import arrow.core.extensions.option.foldable.get
 import arrow.core.getOrElse
 
 // 動作確認用関数.
@@ -11,7 +12,10 @@ fun main(args: Array<String>) {
     // optionResult.
     val x = Optionals().optionResult
     when(x) {
-        is Some -> println(x)
+        is Some -> {
+            val l = x.map{it.length}
+            println("value=[$x], length=[$l].")
+        }
         is None -> println("nothing to print, value is None.")
         else -> println("invalid type")
     }
