@@ -31,5 +31,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = "com.github.keyno63.kotlin_sample.helloworld.hello"
+    mainClassName = "com.github.keyno63.kotlin_sample"
 }
